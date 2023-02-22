@@ -165,7 +165,8 @@ public class CategoryController : Controller
         var category = _context.Categories.First(x => x.Id == categoryId);
 
         ViewData["IsPrivate"] = category!.IsPrivate == true ? 1 : 0;
-
+        ViewData["categoryId"] = categoryId;
+        
         if (error is not null)
         {
             ModelState.AddModelError("", error);
